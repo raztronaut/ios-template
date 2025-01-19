@@ -8,11 +8,13 @@ A modern iOS app template built with SwiftUI, following best practices and inclu
   - Multi-page onboarding with smooth transitions
   - Skip functionality
   - Persistent state management
-- [ ] Authentication (Coming Soon)
-  - Apple Sign In
-  - Magic Link support
-  - Supabase Auth integration
+- [x] Authentication
   - Email/Password authentication
+  - Clean MVVM architecture
+  - Supabase Auth integration
+  - Secure credential handling
+  - Modern SwiftUI form design
+  - Keyboard handling & form validation
 - [ ] In-App Purchases (Coming Soon)
   - Built-in IAP support
   - Revenue generation ready
@@ -29,6 +31,11 @@ Sources/
 ├── App/
 │   └── MainApp.swift
 ├── Features/ 
+│   ├── Authentication/
+│   │   ├── Views/
+│   │   │   └── AuthenticationView.swift
+│   │   └── ViewModels/
+│   │       └── AuthenticationViewModel.swift
 │   ├── Home/
 │   │   ├── Views/
 │   │   └── ViewModels/
@@ -37,14 +44,19 @@ Sources/
 │       └── ViewModels/
 ├── Shared/
 │   ├── Components/
+│   │   └── AuthTextField.swift
 │   ├── Modifiers/
 │   └── Styles/
 ├── Models/
+│   └── User.swift
 ├── Services/
+│   └── Network/
+│       └── AuthenticationService.swift
 └── Core/
     ├── Extensions/
     ├── Utilities/
     └── Constants/
+        └── Config.swift
 ```
 
 ## Requirements
@@ -52,6 +64,7 @@ Sources/
 - iOS 17.0+
 - Xcode 15.0+
 - Swift 5.9+
+- Supabase Account (for authentication)
 
 ## Installation
 
@@ -66,7 +79,12 @@ cd ios-template
 open template.xcodeproj
 ```
 
-3. Build and run the project
+3. Configure Supabase
+   - Create a project at [Supabase](https://supabase.com)
+   - Enable Email auth in Authentication → Providers
+   - Update `Config.swift` with your project URL and anon key
+
+4. Build and run the project
 
 ## Contributing
 
