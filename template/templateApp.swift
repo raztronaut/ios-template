@@ -9,21 +9,19 @@ import SwiftUI
 
 @main
 struct templateApp: App {
-    let persistenceController = PersistenceController.shared
-    @State private var showOnboarding = false
-    private let onboardingModel = OnboardingViewModel()
-
+    @State private var authService = AuthenticationService()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                .sheet(isPresented: $showOnboarding) {
-                    OnboardingView(model: onboardingModel)
-                        .interactiveDismissDisabled()
+            Group {
+                if authService.isAuthenticated {
+                    ContentView()
+                        .environment(authService)
+                } else {
+                    AuthenticationView()
+                        .environment(authService)
                 }
-                .onAppear {
-                    showOnboarding = !onboardingModel.hasSeenOnboarding
-                }
+            }
         }
     }
 }

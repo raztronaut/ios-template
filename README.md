@@ -11,6 +11,8 @@ A modern iOS app template built with SwiftUI, following best practices and inclu
 - [ ] Authentication (Coming Soon)
   - Apple Sign In
   - Magic Link support
+  - Supabase Auth integration
+  - Email/Password authentication
 - [ ] In-App Purchases (Coming Soon)
   - Built-in IAP support
   - Revenue generation ready
