@@ -36,6 +36,12 @@ Sources/
 │   │   │   └── AuthenticationView.swift
 │   │   └── ViewModels/
 │   │       └── AuthenticationViewModel.swift
+│   ├── Onboarding/
+│   │   ├── Views/
+│   │   │   ├── OnboardingView.swift
+│   │   │   └── OnboardingPageView.swift
+│   │   └── ViewModels/
+│   │       └── OnboardingViewModel.swift
 │   ├── Home/
 │   │   ├── Views/
 │   │   └── ViewModels/
@@ -48,7 +54,8 @@ Sources/
 │   ├── Modifiers/
 │   └── Styles/
 ├── Models/
-│   └── User.swift
+│   ├── User.swift
+│   └── OnboardingItem.swift
 ├── Services/
 │   └── Network/
 │       └── AuthenticationService.swift
